@@ -1,0 +1,21 @@
+<!-- @dsCard group="Colors" viewport="700x140" name="Text & borders" subtitle="Three text tiers + two hairline borders on dark" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;padding:16px;background:var(--bg);display:flex;gap:28px;align-items:flex-start;}
+  .col{display:flex;flex-direction:column;gap:10px;}
+  .t{font-size:13px;font-weight:700;}
+  .lbl{font-size:9px;color:var(--dim);margin-top:1px;}
+  .bbox{width:120px;height:30px;border-radius:6px;background:var(--card);display:flex;align-items:center;padding:0 10px;font-size:9px;color:var(--muted);}
+</style></head>
+<body>
+  <div class="col">
+    <div><div class="t" style="color:var(--text)">Primary text</div><div class="lbl">--text · #e8edf5</div></div>
+    <div><div class="t" style="color:var(--muted)">Secondary / muted</div><div class="lbl">--muted · #8b98ae</div></div>
+    <div><div class="t" style="color:var(--dim)">Tertiary / dim labels</div><div class="lbl">--dim · #4b5568</div></div>
+  </div>
+  <div class="col">
+    <div class="bbox" style="border:1px solid var(--border)">--border · #1a2332</div>
+    <div class="bbox" style="border:1px solid var(--border2)">--border2 · #243044</div>
+  </div>
+</body></html>

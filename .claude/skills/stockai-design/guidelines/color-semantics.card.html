@@ -1,0 +1,21 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Market semantics" subtitle="Green gains, red losses, amber neutral, blue info, purple AI" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;padding:14px;background:var(--bg);}
+  .row{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;}
+  .sw{border-radius:8px;overflow:hidden;border:1px solid var(--border);}
+  .chip{height:54px;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;}
+  .meta{padding:6px 8px;background:var(--card);}
+  .nm{font-size:10px;color:var(--text);font-weight:700;}
+  .hx{font-size:9px;color:var(--dim);margin-top:1px;}
+</style></head>
+<body>
+  <div class="row">
+    <div class="sw"><div class="chip" style="background:#00e676;color:#000">+2.4%</div><div class="meta"><div class="nm">--green</div><div class="hx">#00e676 · gains/buy</div></div></div>
+    <div class="sw"><div class="chip" style="background:#ff4444;color:#fff">−1.8%</div><div class="meta"><div class="nm">--red</div><div class="hx">#ff4444 · losses/sell</div></div></div>
+    <div class="sw"><div class="chip" style="background:#fbbf24;color:#000">HOLD</div><div class="meta"><div class="nm">--yellow</div><div class="hx">#fbbf24 · neutral</div></div></div>
+    <div class="sw"><div class="chip" style="background:#3b82f6;color:#fff">NEWS</div><div class="meta"><div class="nm">--blue</div><div class="hx">#3b82f6 · info</div></div></div>
+    <div class="sw"><div class="chip" style="background:#a78bfa;color:#000">AI</div><div class="meta"><div class="nm">--purple</div><div class="hx">#a78bfa · model</div></div></div>
+  </div>
+</body></html>

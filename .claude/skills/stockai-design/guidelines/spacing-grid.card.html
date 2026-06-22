@@ -1,0 +1,19 @@
+<!-- @dsCard group="Spacing" viewport="700x170" name="The 4-column grid" subtitle="255 / 1fr / 290 / 265 — the dashboard layout" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;padding:16px;background:var(--bg);color:var(--text);font-family:var(--font-mono);}
+  .grid{display:grid;grid-template-columns:120px 1fr 135px 122px;gap:8px;height:120px;}
+  .cell{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:8px;display:flex;flex-direction:column;}
+  .n{font-size:9px;color:var(--green);font-weight:800;}
+  .d{font-size:8px;color:var(--dim);margin-top:2px;line-height:1.4;}
+  .w{font-size:8px;color:var(--muted);margin-top:auto;}
+</style></head>
+<body>
+  <div class="grid">
+    <div class="cell"><div class="n">1 · 255px</div><div class="d">Portfolio, search, positions, watchlist, AI engine</div><div class="w">--col-portfolio</div></div>
+    <div class="cell"><div class="n">2 · 1fr</div><div class="d">Chart · AI Analysis · Market · Movers · All Stocks</div><div class="w">flexible</div></div>
+    <div class="cell"><div class="n">3 · 290px</div><div class="d">Intel feed accordions</div><div class="w">--col-intel</div></div>
+    <div class="cell"><div class="n">4 · 265px</div><div class="d">TA + trade form</div><div class="w">--col-ta</div></div>
+  </div>
+</body></html>

@@ -1,0 +1,43 @@
+/* ============================================================
+   StockAI — Typography tokens
+   Monospace throughout. The app ships a system-mono stack;
+   we prepend JetBrains Mono as a webfont so specimens render
+   identically everywhere. SUBSTITUTION: original uses the OS
+   mono stack only (SF Mono / Cascadia Code / Menlo) — JetBrains
+   Mono is the closest free webfont match. Swap if you have the
+   licensed faces.
+   ============================================================ */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700;800&display=swap');
+
+:root {
+  /* ---- Family ---- */
+  --font-mono: 'JetBrains Mono','SF Mono','Cascadia Code','Menlo','Consolas',monospace;
+  --font-body: var(--font-mono); /* mono everywhere — this is a terminal */
+
+  /* ---- Size scale (px — the app is deliberately tiny & dense) ---- */
+  --fs-micro:  7px;   /* stat micro-labels, signal chips */
+  --fs-label:  8px;   /* card titles, uppercase eyebrows */
+  --fs-tiny:   9px;   /* meta lines, tab labels, intel sub-text */
+  --fs-small:  10px;  /* table cells, secondary values */
+  --fs-base:   11px;  /* body default, buttons */
+  --fs-value:  12px;  /* stat values, tickers, primary numbers */
+  --fs-lg:     14px;  /* trade-card ticker, emphasis */
+  --fs-logo:   15px;  /* wordmark */
+
+  /* ---- Weights ---- */
+  --fw-regular:  400;  /* @kind font */
+  --fw-medium:   500;  /* @kind font */
+  --fw-bold:     700;  /* @kind font */
+  --fw-black:    800;  /* @kind font */ /* tickers, values, logo — workhorse */
+
+  /* ---- Line height ---- */
+  --lh-tight:  1.2;  /* @kind font */
+  --lh-snug:   1.4;  /* @kind font */
+  --lh-body:   1.5;  /* @kind font */
+  --lh-loose:  1.6;  /* @kind font */
+
+  /* ---- Letter spacing (uppercase micro-labels are tracked out) ---- */
+  --ls-label:   0.5px;  /* small uppercase labels */
+  --ls-eyebrow: 1px;    /* section eyebrows */
+  --ls-wide:    1.2px;  /* card titles */
+}

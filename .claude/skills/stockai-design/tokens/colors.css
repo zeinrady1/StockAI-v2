@@ -1,0 +1,58 @@
+/* ============================================================
+   StockAI — Color tokens
+   Near-black terminal palette. Lifted verbatim from the
+   StockAI frontend (static/index.html :root block).
+   ============================================================ */
+:root {
+  /* ---- Base surfaces (darkest → lightest) ---- */
+  --bg:       #060910;  /* app background, near-black */
+  --tape:     #070b12;  /* ticker tape / inset wells */
+  --well:     #070b12;  /* alias: inset stat wells */
+  --surface:  #0d1117;  /* top bar, tab strips, accordion headers */
+  --card:     #111827;  /* raised card surface */
+  --field:    #0d1420;  /* text input background */
+
+  /* ---- Borders (subtle → prominent) ---- */
+  --border:   #1a2332;  /* hairline divider, card border */
+  --border2:  #243044;  /* input border, stronger divider */
+
+  /* ---- Semantic market colors ---- */
+  --green:    #00e676;  /* gains, buy, positive, live */
+  --red:      #ff4444;  /* losses, sell, negative, stop-loss */
+  --yellow:   #fbbf24;  /* neutral / hold / amber / tickers */
+  --blue:     #3b82f6;  /* news, info, tier-2 signals */
+  --purple:   #a78bfa;  /* AI / model badge */
+
+  /* ---- Text (brightest → dimmest) ---- */
+  --text:     #e8edf5;  /* primary text */
+  --muted:    #8b98ae;  /* secondary text, labels */
+  --dim:      #4b5568;  /* tertiary, micro-labels, placeholders */
+
+  /* ---- Tinted fills (translucent semantic washes) ---- */
+  --green-wash:  rgba(0,230,118,0.12);
+  --green-line:  rgba(0,230,118,0.25);
+  --green-hover: rgba(0,230,118,0.04);
+  --red-wash:    rgba(255,68,68,0.12);
+  --red-line:    rgba(255,68,68,0.25);
+  --yellow-wash: rgba(251,191,36,0.15);
+  --blue-wash:   rgba(59,130,246,0.10);
+  --blue-line:   rgba(59,130,246,0.20);
+  --purple-wash: rgba(167,139,250,0.10);
+  --purple-line: rgba(167,139,250,0.25);
+
+  /* ---- Glow (used on live dots, buy buttons) ---- */
+  --glow-green: 0 0 6px var(--green);
+  --shadow-dd:  0 8px 32px rgba(0,0,0,0.5);
+
+  /* ---- Semantic aliases ---- */
+  --text-primary:   var(--text);
+  --text-secondary: var(--muted);
+  --text-tertiary:  var(--dim);
+  --surface-app:    var(--bg);
+  --surface-card:   var(--card);
+  --surface-raised: var(--surface);
+  --surface-inset:  var(--well);
+  --pos:            var(--green);  /* positive / gain */
+  --neg:            var(--red);    /* negative / loss */
+  --neutral:        var(--yellow); /* flat / hold */
+}

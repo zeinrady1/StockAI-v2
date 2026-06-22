@@ -1,0 +1,35 @@
+/* ============================================================
+   StockAI — base resets & shared primitives
+   Mirrors the reset + scrollbar + utility classes from the app.
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: var(--font-mono);
+  font-size: var(--fs-base);
+  color: var(--text);
+  background: var(--bg);
+}
+
+/* Ultra-thin scrollbars — a signature of the dense terminal look */
+::-webkit-scrollbar { width: var(--scrollbar); height: var(--scrollbar); }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 2px; }
+
+/* Semantic text color utilities (match app: .g / .r / .y) */
+.g { color: var(--green); }
+.r { color: var(--red); }
+.y { color: var(--yellow); }
+.b { color: var(--blue); }
+.muted { color: var(--muted); }
+.dim { color: var(--dim); }
+
+/* Live status dot */
+.ds-dot {
+  width: var(--dot); height: var(--dot);
+  border-radius: 50%;
+  background: var(--green);
+  box-shadow: var(--glow-green);
+  display: inline-block;
+}
+
+@keyframes spin { to { transform: rotate(360deg); } }

@@ -1,0 +1,19 @@
+<!-- @dsCard group="Brand" viewport="700x150" name="Wordmark" subtitle="Stock (green) + AI (white), monospace black-800" -->
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><link rel="stylesheet" href="../styles.css">
+<style>
+  body{margin:0;padding:20px;background:var(--bg);font-family:var(--font-mono);display:flex;align-items:center;gap:24px;}
+  .logo{font-size:34px;font-weight:800;color:var(--green);white-space:nowrap;}
+  .logo span{color:var(--text);}
+  .dot{width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green);display:inline-block;margin-left:8px;vertical-align:middle;}
+  .note{font-size:9px;color:var(--dim);line-height:1.7;}
+  .lockup{display:flex;align-items:center;}
+</style></head>
+<body>
+  <div class="lockup"><span class="logo">Stock<span>AI</span></span><span class="dot"></span></div>
+  <div class="note">
+    Pure-text wordmark — no logomark file.<br>
+    "Stock" in <b style="color:var(--green)">--green</b>, "AI" in <b style="color:var(--text)">--text</b>.<br>
+    Weight 800 · --font-mono · paired with a glowing live dot.
+  </div>
+</body></html>

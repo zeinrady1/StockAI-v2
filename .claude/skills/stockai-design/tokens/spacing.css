@@ -1,0 +1,42 @@
+/* ============================================================
+   StockAI — Spacing, radii, sizing tokens
+   A power-user tool: everything is compact. Spacing steps are
+   small (2–14px). Radii are gentle (5–9px). No large gaps.
+   ============================================================ */
+:root {
+  /* ---- Spacing scale ---- */
+  --sp-1:  2px;
+  --sp-2:  3px;
+  --sp-3:  4px;
+  --sp-4:  5px;
+  --sp-5:  6px;
+  --sp-6:  8px;
+  --sp-7:  10px;
+  --sp-8:  12px;
+  --sp-9:  14px;
+
+  /* ---- Radii ---- */
+  --r-xs:  4px;   /* chips, signal tags, small wells */
+  --r-sm:  5px;   /* stat wells, mover cells */
+  --r-md:  6px;   /* inputs, secondary buttons */
+  --r-lg:  7px;   /* primary buttons */
+  --r-xl:  8px;   /* cards, search box, dropdowns */
+  --r-pill: 20px; /* outlook pills, status badges */
+  --r-full: 9999px;
+
+  /* ---- Borders ---- */
+  --bw: 1px;            /* hairline — the only border width in the app */
+  --accent-bw: 3px;     /* left-accent on trade cards / open accordion */
+
+  /* ---- Layout: the 4-column dashboard grid ---- */
+  --col-portfolio: 255px;  /* col 1: portfolio + controls */
+  --col-intel:     290px;  /* col 3: intel feed */
+  --col-ta:        265px;  /* col 4: technical analysis */
+  /* col 2 (center chart/analysis) is 1fr */
+
+  /* ---- Control sizing ---- */
+  --tog-w: 32px;        /* toggle switch width */
+  --tog-h: 17px;        /* toggle switch height */
+  --dot:   6px;         /* live status dot */
+  --scrollbar: 4px;     /* ultra-thin scrollbars */
+}
