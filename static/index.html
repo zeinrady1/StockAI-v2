@@ -584,21 +584,23 @@ function setIv(iv) {
   goChart($('chartTk').value);
 }
 
-// ── TA WIDGET — srcdoc (reliable, no blob URLs) ──
+// ── TA WIDGET — srcdoc, no blob URLs ──
 let _taTimer=null, _taIdx=-1, _taRes=[], _taIv='1D', _rawTATicker='NVDA';
 
-function goTA(ticker) {
-  ticker = (ticker || _rawTATicker || 'NVDA').trim().toUpperCase();
+// Core render — always creates a fresh iframe, no cache check
+function _renderTA(ticker) {
+  ticker = (ticker || 'NVDA').trim().toUpperCase();
+  _rawTATicker = ticker;
   const displayTk = ticker.endsWith('-USD') ? ticker.replace('-USD','') : ticker;
   $('taTk').value = displayTk;
   $('taCurrentTk').textContent = displayTk;
 
   const container = $('taContainer');
-  // Skip only if same ticker AND same interval
-  if (ticker === _rawTATicker && container._loadedIv === _taIv) return;
-  _rawTATicker = ticker;
-  container._loadedIv = _taIv;
+  container._loadedKey = ticker + '|' + _taIv;
 
+  // showIntervalTabs:false — TradingView's own tab bar overrides the configured
+  // interval and only exposes 1D/1W/1M, breaking 1H and 15m. Hide it since we
+  // have our own interval buttons.
   const cfg = JSON.stringify({
     symbol: tvSym(ticker),
     interval: _taIv,
@@ -607,7 +609,7 @@ function goTA(ticker) {
     displayMode: 'single',
     locale: 'en',
     colorTheme: 'dark',
-    showIntervalTabs: true,
+    showIntervalTabs: false,
   });
 
   const srcdoc = `<!DOCTYPE html><html><head>
@@ -618,7 +620,6 @@ function goTA(ticker) {
   <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-technical-analysis.js" async>${cfg}<\/script>
 </div></body></html>`;
 
-  // Use srcdoc — no blob URL management needed, works reliably across all browsers
   container.innerHTML = '';
   const iframe = document.createElement('iframe');
   iframe.setAttribute('srcdoc', srcdoc);
@@ -628,14 +629,20 @@ function goTA(ticker) {
   container.appendChild(iframe);
 }
 
+// Called when ticker changes — skip if same ticker+interval already loaded
+function goTA(ticker) {
+  ticker = (ticker || _rawTATicker || 'NVDA').trim().toUpperCase();
+  const container = $('taContainer');
+  if (container._loadedKey === ticker + '|' + _taIv) return;
+  _renderTA(ticker);
+}
+
+// Called when interval button clicked — always reload regardless of current state
 function setTAIv(iv, btn) {
   _taIv = iv;
   document.querySelectorAll('.taiv').forEach(b => b.classList.remove('active-iv'));
   btn.classList.add('active-iv');
-  // Force reload by clearing cached interval
-  const container = $('taContainer');
-  container._loadedIv = null;
-  goTA(_rawTATicker || 'NVDA');
+  _renderTA(_rawTATicker || 'NVDA');
 }
 
 function onTASearch(val) {
